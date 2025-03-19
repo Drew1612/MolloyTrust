@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scalable Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header with Logo and Navigation -->
+  <header>
+    <nav>
+      <div class="logo">MySite</div>
+      <button class="menu-toggle">☰</button>
+      <!-- Navigation links hidden until login -->
+      <ul class="nav-links" id="nav-links" style="display: none;">
+        <li><a href="#general-ledger">General Ledger</a></li>
+        <li><a href="#accounts">Accounts</a></li>
+        <li><a href="#bill-entry">Bill Entry</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Login Screen -->
+  <div id="login-container" class="login-screen">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkLogin()">Login</button>
+    <p id="login-error" style="color: red; display: none;">Incorrect username or password.</p>
+  </div>
+
+  <!-- Main Content (Hidden until login) -->
+  <div id="content" style="display: none;">
+    <section id="home" class="hero">
+      <h1>Welcome to MySite</h1>
+      <p>Your scalable web solution.</p>
+    </section>
+
+    <section id="general-ledger">
+      <h2>General Ledger</h2>
+      <p>Manage financial transactions here.</p>
+    </section>
+
+    <!-- Chart of Accounts Section -->
+    <section id="accounts">
+      <h2>Chart of Accounts</h2>
+      <!-- Add Account Form -->
+      <div id="add-account">
+        <input type="text" id="account-name" placeholder="Account Name">
+        <select id="account-type">
+          <option value="Asset">Asset</option>
+          <option value="Liability">Liability</option>
+          <option value="Equity">Equity</option>
+          <option value="Income">Income</option>
+          <option value="Expense">Expense</option>
+        </select>
+        <input type="number" id="account-balance" placeholder="Balance">
+        <button onclick="addAccount()">Add Account</button>
+      </div>
+      <!-- Accounts List Table -->
+      <table id="accounts-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Balance</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="accounts-list">
+          <!-- Accounts will be inserted here dynamically -->
+        </tbody>
+      </table>
+    </section>
+
+    <section id="bill-entry">
+      <h2>Bill Entry</h2>
+      <p>Enter and manage bills.</p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MySite. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
